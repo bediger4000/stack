@@ -42,8 +42,10 @@ there's whitespace between all command line arguments.
 Keep track of an integer, as well as a heap.
 
 Each time there's a stack push, increment the integer.
-
 Use that integer as the key to the heap ordering.
+That integer becomes an ordinal for the conceptual heap.
+Popping the conceptual stack becomes removing the largest ordinal-valued
+item from the heap.
 
 Stack pop is the same as heap pop,
 except that the integer is decremented.
@@ -51,13 +53,14 @@ except that the integer is decremented.
 ## Analysis
 
 This is an odd problem to solve.
-A heap data structure and associated code is substantially slower
+A heap data structure with associated code is substantially slower
 than the ususal array or linked list that one builds a stack from.
 Maybe that's the point: to pose a problem that the candidate is
-unlikely to ever have implemented, even in practice for coding interviews.
+unlikely to ever have implemented,
+even in practice for coding interviews.
 
 The downside to the oddity is that it requires some programming
-insight to use the stack push's "ordinal" as the heap key.
+insight to use the stack push's index as the heap key.
 
 The coding (after having the insight) is only marginally harder
 than writing code for an array or linked-list based stack.
@@ -65,6 +68,6 @@ This is a question for a really sharp entry-level,
 or a mid-level candidate.
 The use of a heap will throw off some candidates,
 as that "frames" the problem in an unusal way.
-Sure, the codinng is easy,
+Sure, the coding is easy,
 but getting to the coding requires a little of that weird
 "use one thing as another" that a lot of algorithms require.
